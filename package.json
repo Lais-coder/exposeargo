@@ -53,6 +53,7 @@
     "cookie": "^0.7.2",
     "cookie-signature": "^1.2.2",
     "cookiejar": "^2.1.4",
+    "cors": "^2.8.5",
     "cross-spawn": "^7.0.6",
     "debug": "^4.4.3",
     "dedent": "^1.7.0",
@@ -297,7 +298,12 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/server.js",
+    "start": "node backend/server.js",
+    "setup-db": "node backend/scripts/setupDatabase.js",
+    "migrate": "node backend/scripts/runMigration.js",
+    "diagnose-email": "node backend/scripts/diagnoseEmail.js"
   },
   "keywords": [],
   "author": "",

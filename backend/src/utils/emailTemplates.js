@@ -6,6 +6,7 @@ module.exports = (name) => `
       • Portfólio: <a href="${process.env.PORTFOLIO_URL}">${process.env.PORTFOLIO_URL}</a><br/>
       • Site: <a href="https://grupoargo.tech">grupoargo.tech</a>
     </p>
+    <p><strong>📎 Em anexo, você encontrará nosso Pitch Institucional 2025.</strong></p>
     <p>Se tiver dúvidas, basta responder este e-mail.</p>
     <hr/>
     <small>Você recebeu este e-mail porque preencheu o formulário em grupoargo.tech/exposeargo.</small>

@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # Serviço PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: exposeargo-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: exposeargo
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - exposeargo-network
+
+  # Serviço Backend
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: exposeargo-backend
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: ${PORT:-8000}
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-postgres}@postgres:5432/exposeargo
+      SENDGRID_API_KEY: ${SENDGRID_API_KEY}
+      FROM_EMAIL: ${FROM_EMAIL}
+      PORTFOLIO_URL: ${PORTFOLIO_URL}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      RUN_SETUP: ${RUN_SETUP:-true}
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./package.json:/app/package.json
+      - ./backend/assets:/app/backend/assets
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - exposeargo-network
+    restart: unless-stopped
+
+  # Serviço Frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
+    container_name: exposeargo-frontend
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    depends_on:
+      - backend
+    networks:
+      - exposeargo-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  exposeargo-network:
+    driver: bridge
+
