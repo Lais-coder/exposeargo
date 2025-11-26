@@ -70,7 +70,7 @@ function App() {
       } else {
         // Tratamento específico de erros
         let errorMessage = 'Erro ao enviar. Tente novamente.'
-        
+
         if (data.code === 'DUPLICATE_EMAIL') {
           errorMessage = 'Este email já está cadastrado. Use outro email.'
         } else if (data.details && Array.isArray(data.details)) {
@@ -78,7 +78,7 @@ function App() {
         } else if (data.error) {
           errorMessage = data.error
         }
-        
+
         setMessage({ type: 'error', text: errorMessage })
       }
     } catch {
@@ -89,7 +89,7 @@ function App() {
   }
 
   return (
-    
+
     <div className="contact-container" style={{ backgroundImage: `url(${fundoImage})` }}>
       <h1 className="main-hashtag">
         <span className="hashtag-symbol">#</span>
@@ -105,8 +105,8 @@ function App() {
 
           <div className="contact-item">
             <svg className="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <div className="contact-text-wrapper">
               <span className="contact-text">Av. Desembargador Moreira, 1300</span>
@@ -116,8 +116,8 @@ function App() {
 
           <div className="contact-item">
             <svg className="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <div className="contact-text-wrapper">
               <span className="contact-text">99 Wall Street</span>
@@ -133,17 +133,17 @@ function App() {
             <form onSubmit={handleSubmit} className="contact-form">
               <input
                 type="text"
-                placeholder="digite aqui seu nome..."
+                placeholder="digite aqui seu nome"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
                 minLength={2}
                 className="form-input"
               />
-              
+
               <input
                 type="email"
-                placeholder="digite aqui seu gmail..."
+                placeholder="digite aqui seu gmail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -152,7 +152,7 @@ function App() {
 
               <input
                 type="tel"
-                placeholder="digite aqui seu número..."
+                placeholder="digite aqui seu número"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="form-input"
@@ -164,8 +164,8 @@ function App() {
                 </div>
               )}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="submit-button"
                 disabled={loading}
               >
