@@ -36,7 +36,7 @@ function App() {
 
     try {
       // Usar proxy do Nginx em produção ou URL direta em desenvolvimento
-      const apiBase = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '' : 'http://localhost:8000');
+      const apiBase = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '' : 'http://faleconosco.grupoargo.tech:8000');
       const response = await fetch(`${apiBase}/api/leads`, {
         method: 'POST',
         headers: {
