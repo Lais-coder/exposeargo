@@ -3,12 +3,11 @@ module.exports = (name) => `
     <h2>Olá, ${name}!</h2>
     <p>Obrigado pelo interesse. Aqui está nosso portfólio e informações institucionais.</p>
     <p>
-      • Portfólio: <a href="${process.env.PORTFOLIO_URL}">${process.env.PORTFOLIO_URL}</a><br/>
-      • Site: <a href="https://grupoargo.tech">grupoargo.tech</a>
+      • Instituto argo: <a href="https://institutoargo.org.br">institutoargo.org.br</a><br/>
+      • ArgoTech: <a href="https://grupoargo.tech">grupoargo.tech</a>
     </p>
     <p><strong>📎 Em anexo, você encontrará nosso Pitch Institucional 2025.</strong></p>
-    <p>Se tiver dúvidas, basta responder este e-mail.</p>
     <hr/>
-    <small>Você recebeu este e-mail porque preencheu o formulário em grupoargo.tech/exposeargo.</small>
+    <small>Você recebeu este e-mail porque preencheu o formulário em faleconosco.grupoargo.tech.</small>
   </div>
 `;
