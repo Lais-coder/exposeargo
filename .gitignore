@@ -7,3 +7,5 @@ node_modules/
 # Ignorar arquivos do sistema
 .DS_Store
 Thumbs.db
+
+.env
