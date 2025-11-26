@@ -2,7 +2,7 @@
 FROM node:18-alpine AS builder
 
 # Argumentos de build
-ARG VITE_API_URL=http://localhost:8000
+ARG VITE_API_URL=http://faleconosco.grupoargo.tech:8000
 
 # Definir diretório de trabalho
 WORKDIR /app
