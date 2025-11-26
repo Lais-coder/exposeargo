@@ -5,6 +5,7 @@ module.exports = (name) => `
     <p>
       • Instituto argo: <a href="https://institutoargo.org.br">institutoargo.org.br</a><br/>
       • ArgoTech: <a href="https://grupoargo.tech">grupoargo.tech</a>
+      • Instagram: <a href="https://www.instagram.com/argogrupo">grupoargo</a>
     </p>
     <p><strong>📎 Em anexo, você encontrará nosso Pitch Institucional 2025.</strong></p>
     <hr/>
