@@ -55,8 +55,6 @@ services:
     build:
       context: .
       dockerfile: frontend/Dockerfile
-      args:
-        VITE_API_URL: ${VITE_API_URL:-http://faleconosco.grupoargo.tech:8000}
     container_name: exposeargo-frontend
     ports:
       - "${FRONTEND_PORT:-80}:80"
